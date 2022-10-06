@@ -1,0 +1,10 @@
+div{
+    background-color: red;
+    height:20vh;
+    width:20vh;
+    position:fixed;
+}
+body{
+    height:150vh;
+    overflow: scroll;
+}
