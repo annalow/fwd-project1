@@ -3,8 +3,11 @@ div{
     height:20vh;
     width:20vh;
     position:fixed;
+    
 }
 body{
-    height:150vh;
+    height:300vh;
     overflow: scroll;
+    display: flex;
+    margin:0vh;
 }
