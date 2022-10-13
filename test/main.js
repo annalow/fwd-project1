@@ -5,7 +5,7 @@ window.addEventListener("scroll", ()=>{
     const windowWidth = window.innerWidth;
     const windowHeight = innerHeight;
     const objWidth = obj.innerWidth;
-    console.log(objWidth);
+    
     //console.log('scroll');
     const scrollPosition = window.pageYOffset;
     //console.log(scrollPosition);

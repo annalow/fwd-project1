@@ -1,0 +1,31 @@
+#tracks{
+    position:fixed;
+    height:100vh;
+    margin-left:auto;
+    z-index:2;
+}
+#tracks-mask{
+    display:none;
+    position:fixed;
+    height:100vh;
+    margin-left:auto;
+}
+div{
+    background-color: red;
+    width:100vh;
+    height:75vh;
+    /* clip-path: url(#tracks-mask); */
+    z-index:1;
+    object-fit:cover;
+    mask-size: cover;
+    mask-image:url(#tracks-mask);
+    mask-mode: alpha;
+}
+body{
+    height:300vh;
+    overflow: scroll;
+    display: flex;
+    margin:0vh;
+    flex-flow: column nowrap;
+    align-items:flex-end;
+}
