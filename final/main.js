@@ -1,19 +1,18 @@
-
 const myWindow = document.querySelector('body');
 const tracks = document.querySelector('#tracks');
-const tracksMask = document.querySelector('#tracks-mask');
+const bodyImage = document.querySelector('#bodyImage');
+
 window.addEventListener("scroll", ()=>{
     const windowWidth = window.innerWidth;
     const windowHeight = innerHeight;
-    const tracksWidth = tracks.innerWidth;
-    
     const scrollPosition = window.pageYOffset;
     if(scrollPosition >= windowHeight){
-        var moveTracks = scrollPosition - windowHeight;
+        var moveTracks = scrollPosition - windowHeight;  
     }else{
         tracks.style.top = '0px';
-        tracksMask.style.top = '0px';
+        bodyImage.style.webkitMaskPosition = `right ${scrollPosition}px`;
     }
     tracks.style.top = -moveTracks + 'px';
-    tracksMask.style.top = -moveTracks + 'px';
+    bodyImage.style.top = -moveTracks + 'px';
+    console.log(bodyImage.style.webkitMaskPosition);
 })
