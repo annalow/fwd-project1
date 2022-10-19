@@ -7,7 +7,6 @@
 #bodyImage{
     width:131.746032vh;
     z-index:1;
-    right:0vw;
     mask-image: url('images/mask-b&w.svg');
     -webkit-mask-image: url('images/mask-b&w.svg');
     mask-repeat:no-repeat;
@@ -17,6 +16,16 @@
     mask-size:131.746032vh 100vh;
     -webkit-mask-size: 131.746032vh 100vh;
     
+}
+#tracks.show, #bodyImage.show{
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s; 
+    opacity: 1;
+}
+#tracks.hide, #bodyImage.hide{
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    opacity: 0;
 }
 body{
     /* background-image: ; */
@@ -29,7 +38,7 @@ body{
 }
 .reveals{
     position:absolute;
-    font-size:6vh;
+    font-size:10vh;
     font-weight: bold;
     opacity:0;
     visibility: hidden;
@@ -58,7 +67,8 @@ body{
     left:41vw;
     top:80vh;
 }
-#woman-full{
+.woman{
+    position:absolute;
     left:0vw;
     top:150vh;
     width: auto;

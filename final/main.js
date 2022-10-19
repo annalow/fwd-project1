@@ -37,12 +37,36 @@ window.addEventListener("scroll", ()=>{
          }
     }
 
+    //FADE IN WOMAN
+    const womanFull = document.querySelector('#woman-full');
+    
+    var op = womanFull.getBoundingClientRect().top / womanFull.getBoundingClientRect().height;
+    womanFull.style.opacity = 1 - op;
+    
+
+    if(womanFull.getBoundingClientRect().top <= 0){
+        
+        womanFull.style.top = '0px';
+        womanFull.style.position = 'fixed';
+        
+    }
+    if(scrollPosition < 1.5*windowHeight){
+        womanFull.style.position = 'absolute';
+        womanFull.style.top = 1.5*windowHeight + 'px';
+    }
+    
 
     //FADE OUT TRACKS
-    const womanFull = document.querySelector('#woman-full');
-    // console.log(womanFull.getBoundingClientRect().top);
-    // if(scrollPosition > windowHeight){
-    //     tracks.style.left = windowWidth * (scrollPosition / windowHeight) - tracks.offsetWidth + 'px';
-    //     bodyImage.style.marginRight = tracks.offsetWidth - (windowWidth * scrollPosition / windowHeight) - tracks.offsetWidth + 'px';
-    // }
+    if(scrollPosition > windowHeight){
+        tracks.classList.add('hide');
+        tracks.classList.remove('show');
+        bodyImage.classList.add('hide');
+        bodyImage.classList.remove('show');
+    }else{
+        tracks.classList.remove('hide');
+        tracks.classList.add('show');
+        bodyImage.classList.remove('hide');
+        bodyImage.classList.add('show');
+        
+    }
 })
