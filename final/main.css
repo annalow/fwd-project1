@@ -1,3 +1,16 @@
+#bg{
+    height:150vh;
+    width:100vw;
+    z-index: 0;
+    position:absolute;
+}
+#bg2{
+    height:250vh;
+    width:100vw;
+    z-index: 0;
+    top:150vh;
+    position:absolute;
+}
 #tracks{
     position:fixed;
     height:100vh;
@@ -28,9 +41,8 @@
     opacity: 0;
 }
 body{
-    /* background-image: ; */
     display:flex;
-    height:300vh;
+    height:400vh;
     overflow: scroll;
     margin:0vh;
     flex-flow: column nowrap;
@@ -64,7 +76,7 @@ body{
     top:70vh;
 }
 #me{
-    left:41vw;
+    left:44vw;
     top:80vh;
 }
 .woman{
@@ -75,4 +87,13 @@ body{
     height: auto;
     max-width: 80vw;
     max-height: 100vh;
+}
+#seduction{
+    position:fixed;
+    left:0vw;
+    width: auto;
+    height: auto;
+    max-width: 80vw;
+    max-height: 100vh;
+    opacity:0;
 }

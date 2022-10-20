@@ -38,22 +38,40 @@ window.addEventListener("scroll", ()=>{
     }
 
     //FADE IN WOMAN
-    const womanFull = document.querySelector('#woman-full');
+    const woman = document.querySelectorAll('.woman');
+    const seduction = document.querySelector('#seduction');
+    const womanFull = woman[0];
     
-    var op = womanFull.getBoundingClientRect().top / womanFull.getBoundingClientRect().height;
-    womanFull.style.opacity = 1 - op;
-    
+    seduction.style.top = womanFull.getBoundingClientRect().top - seduction.getBoundingClientRect().height + 'px';
 
-    if(womanFull.getBoundingClientRect().top <= 0){
-        
-        womanFull.style.top = '0px';
-        womanFull.style.position = 'fixed';
-        
+    if(womanFull.style.opacity == 1){
+        woman[1].style.opacity = 1;
+    }else{
+        woman[1].style.opacity = 0;
     }
-    if(scrollPosition < 1.5*windowHeight){
-        womanFull.style.position = 'absolute';
-        womanFull.style.top = 1.5*windowHeight + 'px';
+    for (var j = 0; j < woman.length; j++){
+        var op = womanFull.getBoundingClientRect().top / womanFull.getBoundingClientRect().height;
+        woman[j].style.opacity = 1 - op;
+    
+        if(womanFull.getBoundingClientRect().top <= 0){
+        
+            woman[j].style.top = '0px';
+            woman[j].style.position = 'fixed';
+
+            seduction.style.opacity = 1;
+            seduction.style.top = scrollPosition - 1.5*windowHeight - seduction.getBoundingClientRect().height + 'px';
+            
+            
+        }
+        if(scrollPosition < 1.5*windowHeight){
+            woman[j].style.position = 'absolute';
+            woman[j].style.top = 1.5*windowHeight + 'px';
+            seduction.style.opacity = 0;
+        }
+    
     }
+    
+    
     
 
     //FADE OUT TRACKS
